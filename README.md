@@ -25,3 +25,10 @@ pip install watchdog mutagen
 
 ## Usage
 python auto.py
+
+## Auto Start (Windows)
+1. Create a shortcut of `run.bat`
+2. Press `Win + R` → type `shell:startup` → Enter
+3. Move the shortcut to that folder
+
+The organizer will start automatically every time you log in.**
