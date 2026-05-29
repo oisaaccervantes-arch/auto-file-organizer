@@ -10,12 +10,19 @@ from mutagen import File
 
 # ── Directories ──────────────────────────────────────────────
 
-source_dir         = r""  # e.g. r"C:\Users\YourName\Downloads"
-dest_dir_sfx       = r""  # e.g. r"C:\Users\YourName\Downloads\SOUND"
-dest_dir_music     = r""  # e.g. r"C:\Users\YourName\Downloads\MUSIC"
-dest_dir_video     = r""  # e.g. r"C:\Users\YourName\Downloads\VIDEO"
-dest_dir_image     = r""  # e.g. r"C:\Users\YourName\Downloads\IMAGES"
-dest_dir_documents = r""  # e.g. r"C:\Users\YourName\Documents"
+source_dir         = r"C:\Users\Oisaa\Downloads"
+dest_dir_sfx       = r"C:\Users\Oisaa\Downloads\SOUND"
+dest_dir_music     = r"C:\Users\Oisaa\Downloads\MUSIC"
+dest_dir_video     = r"C:\Users\Oisaa\Downloads\VIDEO"
+dest_dir_image     = r"C:\Users\Oisaa\Downloads\IMAGES"
+dest_dir_documents = r"C:\Users\Oisaa\Downloads\DOCUMENTS"
+
+# Create destination folders if they don't exist
+Path(dest_dir_sfx).mkdir(exist_ok=True)
+Path(dest_dir_music).mkdir(exist_ok=True)
+Path(dest_dir_video).mkdir(exist_ok=True)
+Path(dest_dir_image).mkdir(exist_ok=True)
+Path(dest_dir_documents).mkdir(exist_ok=True)
 
 # ── Supported extensions ─────────────────────────────────────
 
@@ -114,7 +121,7 @@ if __name__ == "__main__":
     observer.start()
     try:
         # keep the script running until interrupted
-        while observer.isAlive():
+        while observer.is_alive():
             observer.join(1)
     finally:
         observer.stop()
